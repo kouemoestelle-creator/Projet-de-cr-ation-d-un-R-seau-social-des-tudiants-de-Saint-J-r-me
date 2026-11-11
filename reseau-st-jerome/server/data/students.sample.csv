@@ -1,0 +1,5 @@
+matricule,email,nom,filiere,niveau
+SJ-0001,etudiant1@etu.example.cm,Étudiant Test Un,Génie logiciel,Niveau 2
+SJ-0002,etudiant2@etu.example.cm,Étudiant Test Deux,Génie civil,Niveau 2
+SJ-0003,etudiant3@etu.example.cm,Étudiant Test Trois,Génie électrique,Niveau 1
+SJ-0004,etudiant4@etu.example.cm,Étudiant Test Quatre,Génie logiciel,Niveau 3
