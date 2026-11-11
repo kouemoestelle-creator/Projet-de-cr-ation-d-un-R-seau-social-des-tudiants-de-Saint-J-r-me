@@ -373,3 +373,71 @@ input:focus, textarea:focus, .btn:focus-visible { outline: 2px solid var(--accen
     padding: 0.5rem;
   }
 }
+/* ===== Nouvelle présentation de la connexion SJ Connect ===== */
+
+.login-page {
+  width: 100%;
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.login-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.login-subtitle {
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.login-intro > p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.login-form {
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.login-form .btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.login-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  .login-intro h1 {
+    font-size: 1.6rem;
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
+}
