@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx';
@@ -5,6 +6,7 @@ import { useAuth } from '../AuthContext.jsx';
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,6 +16,7 @@ export default function Login() {
     e.preventDefault();
     setError('');
     setBusy(true);
+
     try {
       await login(identifier, password);
       navigate('/', { replace: true });
@@ -25,23 +28,65 @@ export default function Login() {
   }
 
   return (
-    <main className="auth">
-      <h1>Réseau Saint Jérôme</h1>
-      <p className="muted">Connectez-vous avec votre e-mail institutionnel ou votre matricule.</p>
-      <form className="card form" onSubmit={submit}>
+    <main className="auth login-page">
+      <section className="login-intro">
+        <h1>Bienvenue sur SJ Connect</h1>
+
+        <p className="login-subtitle">
+          Le réseau social des étudiants de l'Université Catholique
+          Saint Jérôme de Douala.
+        </p>
+
+        <p>
+          Échangez avec vos camarades, partagez vos expériences,
+          développez votre réseau et restez connectés à la vie
+          universitaire.
+        </p>
+      </section>
+
+      <form className="card form login-form" onSubmit={submit}>
+        <h2>Connexion</h2>
+
         <label>
           E-mail institutionnel ou matricule
-          <input value={identifier} onChange={(e) => setIdentifier(e.target.value)} autoComplete="username" required />
+          <input
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            autoComplete="username"
+            required
+          />
         </label>
+
         <label>
           Mot de passe
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" required />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+            required
+          />
         </label>
-        {error && <p className="error" role="alert">{error}</p>}
-        <button className="btn" disabled={busy}>{busy ? 'Connexion…' : 'Se connecter'}</button>
+
+        {error && (
+          <p className="error" role="alert">{error}</p>
+        )}
+
+        <button className="btn" disabled={busy}>
+          {busy ? 'Connexion…' : 'Se connecter'}
+        </button>
+
+        <p className="center">
+          <Link to="/inscription">Créer mon compte</Link>
+          {' · '}
+          <Link to="/mot-de-passe-oublie">
+            Mot de passe oublié
+          </Link>
+        </p>
       </form>
-      <p className="center">
-        <Link to="/inscription">Créer mon compte</Link> · <Link to="/mot-de-passe-oublie">Mot de passe oublié</Link>
+
+      <p className="login-footer">
+        SJ Connect — Ensemble, connectons notre communauté universitaire.
       </p>
     </main>
   );
