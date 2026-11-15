@@ -254,7 +254,8 @@ export default function Messages() {
                         maxWidth: '80%',
                         padding: '10px 14px',
                         borderRadius: '14px',
-                        background: isMine ? '#dbeafe' : '#f3f4f6',
+                        background: isMine ? '#3b82f6' : '#e5e7eb',
+                        color: isMine ? '#ffffff' : '#1f2937'
                         overflowWrap: 'anywhere'
                       }}
                     >
