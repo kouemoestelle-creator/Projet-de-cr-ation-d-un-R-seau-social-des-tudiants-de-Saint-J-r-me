@@ -255,7 +255,7 @@ export default function Messages() {
                         padding: '10px 14px',
                         borderRadius: '14px',
                         background: isMine ? '#3b82f6' : '#e5e7eb',
-                        color: isMine ? '#ffffff' : '#1f2937'
+                        color: isMine ? '#ffffff' : '#1f2937',
                         overflowWrap: 'anywhere'
                       }}
                     >
